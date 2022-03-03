@@ -1,44 +1,55 @@
 <div class="container">
-    <form  [formGroup]="basicForm"  (ngSubmit)="onSubmit()">
+  <form [formGroup]="basicForm" (ngSubmit)="onSubmit()">
     <div class="input">
-    <label >
-            Salary:
-            <div>
-            <input  class="field2"type="number" formControlName="salary">
-            </div>
-    </label>
-    </div>
-
-    <div class="input">
-    <label >
-        Percent: 
+      <label>
+        Salary:
         <div>
-        <input  class="field"type="number" formControlName="nps_percent">
-        <button class="btn animated-border-button" type="submit" [disabled]="!basicForm.valid" (click)="onCheck()">Check</button>
-            </div>
-    </label>
-    </div>
-
-    <div class="input"> 
-    <label >
-        NPS Amount: 
-        <div>   
-         <input class="field2" type="text" formControlName="finalValue">
-            </div>
-    </label>
-    </div>
-    <div class="input">
-    <label >
-        PRAN: 
-        <div>
-        <input  class="field2"  type="text" formControlName="pranNumber">
+          <input class="field2" type="number" formControlName="salary" />
         </div>
-    </label>
-
-    <button  class="button animated-border-button" type="submit" [disabled]="!basicForm.valid">Submit</button>
-
+      </label>
     </div>
-</form>
 
+    <div class="input">
+      <label>
+        Percent:
+        <div>
+          <input class="field" type="number" formControlName="nps_percent" />
+          <button
+            class="btn animated-border-button"
+            type="submit"
+            [disabled]="!basicForm.valid"
+            (click)="onCheck()"
+          >
+            Check
+          </button>
+        </div>
+      </label>
+    </div>
+
+    <div class="input">
+      <label>
+        NPS Amount:
+        <div>
+          <input class="field2" type="text" formControlName="finalValue" />
+        </div>
+      </label>
+    </div>
+    <div class="input">
+      <label>
+        PRAN:
+        <div>
+          <input class="field2" type="text" formControlName="pranNumber" />
+        </div>
+      </label>
+
+      <button
+        class="button animated-border-button"
+        type="submit"
+        [disabled]="!basicForm.valid"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
 </div>
-
+<h1>Helllo world</h1>
