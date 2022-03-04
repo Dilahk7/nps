@@ -1,80 +1,72 @@
-.input{
-    margin: 10px 10px 10px 10px;
-
+.input {
+  margin: 10px 10px 10px 10px;
 }
- .field{
-    /* background-color: #13200d; */
-    /* color: white; */
-    height: 25px;
-    width: 230px;
-    border-radius: 8px;
+.field {
+  /* background-color: #13200d; */
+  /* color: white; */
+  height: 25px;
+  width: 230px;
+  border-radius: 8px;
 }
 
-.field2{
-    /* background-color: #bb6f3c;
+.field2 {
+  /* background-color: #bb6f3c;
     color: rgb(226, 222, 226); */
-    height: 25px;
-    width: 230px;
-    border-radius: 8px;
-} 
+  height: 25px;
+  width: 230px;
+  border-radius: 8px;
+}
 .field:focus {
-    border: 3px solid #555;
-    
+  border: 3px solid #555;
 }
-.container{
-    margin-top: 17%;
-    display: flex;
-    justify-content: center;
+.container {
+  margin-top: 17%;
+  display: flex;
+  justify-content: center;
 }
-.btn{
-    margin-left: 10px;
-    
+.btn {
+  margin-left: 10px;
 }
 
-.button{
-    margin-top: 10px;
+.button {
+  margin-top: 10px;
 }
 
 .animated-border-button {
-    background-color: #263059;
-    border: none;
-    color: #ffffff;
-    outline: none;
-    /* padding: 1px 40px 10px; */
-    position: relative;
-    }
-    
-    
-    
-    .animated-border-button:before,
-    .animated-border-button:after {
-    border: 0 solid transparent;
-    transition: all 0.3s;
-    content: '';
-    height: 0;
-    position: absolute;
-    width: 24px;
-    }
-    
-    
-    
-    .animated-border-button:before {
-    border-top: 2px solid #263059;
-    right: 0;
-    top: -4px;
-    }
-    
-    
-    
-    .animated-border-button:after {
-    border-bottom: 2px solid #263059;
-    bottom: -4px;
-    left: 0;
-    }
-    
-    
-    
-    .animated-border-button:hover:before,
-    .animated-border-button:hover:after {
-    width: 100%;
-    }
+  background-color: #263059;
+  border: none;
+  color: #ffffff;
+  outline: none;
+  /* padding: 1px 40px 10px; */
+  position: relative;
+}
+
+.animated-border-button:before,
+.animated-border-button:after {
+  border: 0 solid transparent;
+  transition: all 0.3s;
+  content: "";
+  height: 0;
+  position: absolute;
+  width: 24px;
+}
+
+.animated-border-button:before {
+  border-top: 2px solid #263059;
+  right: 0;
+  top: -4px;
+}
+
+.animated-border-button:after {
+  border-bottom: 2px solid #263059;
+  bottom: -4px;
+  left: 0;
+}
+
+.animated-border-button:hover:before,
+.animated-border-button:hover:after {
+  width: 100%;
+}
+.Danger-text {
+  color: red;
+}

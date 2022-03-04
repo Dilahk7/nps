@@ -1,21 +1,34 @@
 <div class="container">
   <form [formGroup]="basicForm" (ngSubmit)="onSubmit()">
     <div class="input">
-      <label>
-        Salary:
-        <div>
-          <input class="field2" type="number" formControlName="salary" />
-        </div>
-      </label>
+      <label> Salary: </label>
+      <div>
+        <select formControlName="dropdownval" name="select Percent">
+          <option value="300000" [selected]="300000">300000</option>
+          <option value="User-input">User-input</option>
+        </select>
+      </div>
     </div>
+    <div *ngIf="checkopt()">
+      <input class="field2" type="number" formControlName="salary" />
+    </div>
+    <!--  -->
 
-    <div class="input">
+    <!-- <div class="input">
       <label>
         Percent:
         <div>
           <input class="field" type="number" formControlName="nps_percent" />
+          <div
+            *ngIf="
+              basicForm.get('nps_percent')?.invalid &&
+              basicForm.get('nps_percent')?.touched
+            "
+          >
+            <h4 class="Danger-text">Please Enter a valid %</h4>
+          </div>
           <button
-            class="btn animated-border-button"
+            class="btn"
             type="submit"
             [disabled]="!basicForm.valid"
             (click)="onCheck()"
@@ -24,13 +37,23 @@
           </button>
         </div>
       </label>
+    </div> -->
+
+    <label for="Percent">Select your desired Percent:</label>
+    <div>
+      <select formControlName="nps_percent" name="select Percent">
+        <option *ngFor="let dropvalue of dropvalues" [value]="dropvalue">
+          {{ dropvalue }}
+        </option>
+      </select>
+      <button class="btn" type="submit" (click)="onCheck()">Check</button>
     </div>
 
     <div class="input">
       <label>
         NPS Amount:
         <div>
-          <input class="field2" type="text" formControlName="finalValue" />
+          <input class="field2" type="number" formControlName="finalValue" />
         </div>
       </label>
     </div>
@@ -42,14 +65,9 @@
         </div>
       </label>
 
-      <button
-        class="button animated-border-button"
-        type="submit"
-        [disabled]="!basicForm.valid"
-      >
+      <button class="button" type="submit" [disabled]="!basicForm.valid">
         Submit
       </button>
     </div>
   </form>
 </div>
-<h1>Helllo world</h1>
