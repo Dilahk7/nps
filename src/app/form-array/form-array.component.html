@@ -1,0 +1,36 @@
+<span>TaskCode</span>
+<span>Amount</span>
+<span>Calculated Amount</span>
+<span>Status</span>
+<span>Date</span>
+<form [formGroup]="userfg">
+  <div formArrayName="form">
+    <div *ngFor="let f of form.controls; let i = index">
+      <div [formGroupName]="i" class="labels">
+        {{ i + 1 }}
+
+        <label>{{ f.get("employecode")?.value }}</label>
+
+        <input type="number" (input)="calamount(i)" formControlName="amount" />
+        <!-- <div *ngIf="f.get('amount')?.invalid && f.get('amount')?.touched">
+          <small *ngIf="f.get('amount')?.invalid">Min amount is 100</small>
+          <small *ngIf="f.get('amount')?.touched"
+            >Amount is a necessary field</small
+          >
+        </div> -->
+
+        <input type="number" formControlName="calculatedAmount" />
+
+        <select formControlName="status">
+          <option *ngFor="let stat of Status" [value]="stat">
+            {{ stat }}
+          </option>
+        </select>
+
+        <input type="date" formControlName="date" />
+      </div>
+    </div>
+  </div>
+
+  <button class="btn-right" (click)="onsumbmitevent()">Submit</button>
+</form>

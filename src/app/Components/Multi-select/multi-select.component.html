@@ -1,0 +1,21 @@
+<!-- <label> Select one or multiple stage </label> -->
+<!-- <select
+  [(ngModel)]="selectedOption"
+  multiple
+  (ngModelChange)="onEmployeeSelected($event)"
+> -->
+<!-- <option selected></option>
+  <option *ngFor="let dropvalue of dropvalues">
+    {{ dropvalue }}
+  </option>
+</select>
+<p>The selected option is {{ selectedOption }}</p> -->
+
+<ng-multiselect-dropdown
+  [placeholder]="'select one or multiple stages'"
+  [settings]="dropdownSettings"
+  [data]="dropdownList"
+  [(ngModel)]="selectedItems"
+  (ngModelChange)="onItemSelect($event)"
+>
+</ng-multiselect-dropdown>

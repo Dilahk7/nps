@@ -1,0 +1,42 @@
+<app-date-filter
+  (dateChanged)="date = $event"
+  (dateRangeChanged)="dateRange = $event"
+>
+</app-date-filter>
+<app-drop-select (parentFunction)="parentfunction($event)"> </app-drop-select>
+<hr />
+<app-multi-select
+  (Multiparentfunction)="Multiparentfunction($event)"
+></app-multi-select>
+<hr />
+<div>
+  <input
+    type="text"
+    placeholder="Search by Name or Task code "
+    [(ngModel)]="searchTerm"
+  />
+</div>
+<hr />
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<table
+  cdk-table
+  [dataSource]="
+    dataSource
+      | dateRangeFilter: dateRange
+      | dateFilter: date
+      | multiselectPipe: mulitselect
+      | dropselectPipe: dropselect
+      | searchFilter: searchTerm
+      | paginate: { itemsPerPage: 5, currentPage: p }
+  "
+>
+  <ng-container *ngFor="let col of rowNames" cdkColumnDef="{{ col }}">
+    <th cdk-header-cell *cdkHeaderCellDef>{{ col }}</th>
+    <td cdk-cell *cdkCellDef="let element">
+      {{ element[col] }}
+    </td>
+  </ng-container>
+  <tr cdk-header-row *cdkHeaderRowDef="rowNames"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: rowNames"></tr>
+</table>

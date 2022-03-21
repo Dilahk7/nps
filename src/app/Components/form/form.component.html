@@ -65,7 +65,12 @@
         </div>
       </label>
 
-      <button class="button" type="submit" [disabled]="!basicForm.valid">
+      <button
+        class="button"
+        type="submit"
+        [disabled]="!basicForm.valid"
+        (click)="onSubmit()"
+      >
         Submit
       </button>
     </div>

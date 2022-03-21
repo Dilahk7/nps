@@ -1,0 +1,12 @@
+<label> Select a single Status </label>
+<select
+  [(ngModel)]="SingleselectedOption"
+  (ngModelChange)="onSingleSelect($event)"
+>
+  <option value="Select one" selected>Select one</option>
+  <option *ngFor="let multivalue of multivalues">
+    {{ multivalue }}
+  </option>
+</select>
+
+<p>You choosed {{ SingleselectedOption }}</p>
